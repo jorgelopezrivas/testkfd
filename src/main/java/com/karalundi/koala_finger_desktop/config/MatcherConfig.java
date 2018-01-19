@@ -40,7 +40,7 @@ public class MatcherConfig {
         this.endpoint = config.getString("endpoint");
         this.configName = config.getString("configName");
         this.enterpriseId = config.getString("enterpriseId");
-        this.storagePath = config.getString("storagePath");
+        this.storagePath = config.getString("storagePath").replace("\\", "\\\\");
     }
     
     public void writeConfigFile(String configFile) throws ConfigurationException {
