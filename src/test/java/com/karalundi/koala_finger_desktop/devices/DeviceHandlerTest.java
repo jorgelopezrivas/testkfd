@@ -7,9 +7,11 @@ package com.karalundi.koala_finger_desktop.devices;
 
 import com.karalundi.koala_finger_desktop.DeviceList.DeviceListHandler;
 import com.karalundi.koala_finger_desktop.DeviceList.DeviceListNode;
+import com.karalundi.koala_finger_desktop.config.MatcherConfig;
 import com.karalundi.koala_finger_desktop.devices.DeviceHandler;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.configuration.ConfigurationException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,12 +45,14 @@ public class DeviceHandlerTest {
     }
      
    @Test
-   public void testUareUAccess(){
+   public void testUareUAccess() throws ConfigurationException{
        DeviceListHandler dlh = new DeviceListHandler();
        List<DeviceListNode> nodes = new ArrayList<>();
        nodes = dlh.getAllDevices();
        
-       DeviceHandler dh = new DeviceHandler("UareU");
+       MatcherConfig config = new MatcherConfig();
+       config.readConfigFile("C:\\KoalaFingerDesktop\\config\\matcher.properties");
+       DeviceHandler dh = new DeviceHandler("UareU", config);
        //4500: $00$05ba&000a&0103{F82B3C01-18CC-BC49-8233-A923EC2D7C13}
        //5300: $00$05ba&000e&0001{768636ED-CED3-4A48-A20D-937D4AB6B5FC}
        assertEquals(true, dh.open("$00$05ba&000e&0001{768636ED-CED3-4A48-A20D-937D4AB6B5FC}"));
@@ -57,12 +61,14 @@ public class DeviceHandlerTest {
    }
    
    @Test
-   public void testUareUReset(){
+   public void testUareUReset() throws ConfigurationException{
        DeviceListHandler dlh = new DeviceListHandler();
        List<DeviceListNode> nodes = new ArrayList<>();
        nodes = dlh.getAllDevices();
        
-       DeviceHandler dh = new DeviceHandler("UareU");
+       MatcherConfig config = new MatcherConfig();
+       config.readConfigFile("C:\\KoalaFingerDesktop\\config\\matcher.properties");
+       DeviceHandler dh = new DeviceHandler("UareU", config);
        //4500: $00$05ba&000a&0103{F82B3C01-18CC-BC49-8233-A923EC2D7C13}
        //5300: $00$05ba&000e&0001{768636ED-CED3-4A48-A20D-937D4AB6B5FC}
        assertEquals(true, dh.open("$00$05ba&000e&0001{768636ED-CED3-4A48-A20D-937D4AB6B5FC}"));
