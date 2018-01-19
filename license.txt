@@ -1,0 +1,9 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Propiedad Intelectual de Karalundi. Todos los Derechos Reservados
+<#if licenseLast??>
+${licenseLast}
+</#if>
+
+
