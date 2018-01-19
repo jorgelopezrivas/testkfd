@@ -5,6 +5,8 @@
  */
 package com.karalundi.koala_finger_desktop.devices;
 
+import com.karalundi.koala_finger_desktop.config.MatcherConfig;
+
 /**
  *
  * @author koala 1
@@ -15,8 +17,15 @@ public class DeviceDescriptor {
     private String serialNumber;
     private String productName;
     private String vendorName;
-    private String sdkName;
+    private String driverName;
+    private String sessionId;
 
+    public DeviceDescriptor(MatcherConfig config) {
+        Session session = new Session(config);
+        session.createSessionDir();
+        this.sessionId = session.getSessionId();
+    }
+    
     public String getName() {
         return name;
     }

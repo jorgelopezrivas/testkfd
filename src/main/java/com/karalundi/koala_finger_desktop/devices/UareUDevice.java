@@ -5,7 +5,7 @@
  */
 package com.karalundi.koala_finger_desktop.devices;
 import com.digitalpersona.uareu.*;
-//import com.digitalpersona.uareu.Reader.Description;
+import com.karalundi.koala_finger_desktop.config.MatcherConfig;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,13 +16,16 @@ import java.util.logging.Logger;
 public class UareUDevice extends DeviceDescriptor implements Device {
 
     private Reader reader;
+
+    public UareUDevice(MatcherConfig config) {
+        super(config);
+    }
         
     @Override
     public Boolean open(String deviceId) {
         try {
             ReaderCollection srcList = UareUGlobal.GetReaderCollection();
             srcList.GetReaders();
-            // Pendiente arreglar el indice en 0, implementar busqueda
             /*Buscar el deviceId para obtener el indice. El indice es 
             necesario para seleccionar el dispositivo*/
             Boolean deviceExists = false;
