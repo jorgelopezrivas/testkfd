@@ -11,13 +11,13 @@ import com.karalundi.koala_finger_desktop.config.MatcherConfig;
 public class DeviceHandler {
     private Device device;
     
-    DeviceHandler(String driverName, MatcherConfig config) {
+    DeviceHandler(String driverName, MatcherConfig config, int captureMode) {
         switch(driverName){
             case "FileDevice":
-                device = new FileDevice(config);
+                device = new FileDevice(config, captureMode);
                 break;
             case "UareU":
-                device = new UareUDevice(config);
+                device = new UareUDevice(config, captureMode);
                 break;
         }        
     }

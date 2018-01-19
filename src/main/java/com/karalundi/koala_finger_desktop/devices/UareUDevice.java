@@ -15,8 +15,8 @@ public class UareUDevice extends DeviceDescriptor implements Device {
 
     private Reader reader;
 
-    public UareUDevice(MatcherConfig config) {
-        super(config);
+    public UareUDevice(MatcherConfig config, int captureMode) {
+        super(config, captureMode);
     }
         
     @Override

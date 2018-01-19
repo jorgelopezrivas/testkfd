@@ -17,8 +17,9 @@ public class DeviceDescriptor {
     private String vendorName;
     private String driverName;
     private String sessionId;
+    private String captureMode;
 
-    public DeviceDescriptor(MatcherConfig config) {
+    public DeviceDescriptor(MatcherConfig config, int captureMode) {
         Session session = new Session(config);
         session.createSessionDir();
         this.sessionId = session.getSessionId();

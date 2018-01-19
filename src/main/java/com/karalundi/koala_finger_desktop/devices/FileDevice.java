@@ -11,8 +11,8 @@ import com.karalundi.koala_finger_desktop.config.MatcherConfig;
  */
 public class FileDevice extends DeviceDescriptor implements Device {
 
-    public FileDevice(MatcherConfig config) {
-        super(config);
+    public FileDevice(MatcherConfig config, int captureMode) {
+        super(config, captureMode);
     }
 
     @Override
