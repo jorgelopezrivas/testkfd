@@ -1,10 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Propiedad Intelectual de Karalundi. Todos los Derechos Reservados
  */
 package com.karalundi.koala_finger_desktop.devices;
 
+import com.karalundi.koala_finger_desktop.config.MatcherConfig;
 /**
  *
  * @author jorgelr
@@ -12,13 +11,13 @@ package com.karalundi.koala_finger_desktop.devices;
 public class DeviceHandler {
     private Device device;
     
-    DeviceHandler(String sdkName) {
-        switch(sdkName){
-            case "Dummy":
-                //device = new DummyDevice();
+    DeviceHandler(String driverName, MatcherConfig config) {
+        switch(driverName){
+            case "FileDevice":
+                device = new FileDevice(config);
                 break;
             case "UareU":
-                device = new UareUDevice();
+                device = new UareUDevice(config);
                 break;
         }        
     }
