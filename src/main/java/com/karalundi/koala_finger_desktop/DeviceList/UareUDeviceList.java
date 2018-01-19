@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Propiedad Intelectual de Karalundi. Todos los Derechos Reservados
  */
 package com.karalundi.koala_finger_desktop.DeviceList;
 import com.karalundi.koala_finger_desktop.DeviceList.DeviceList;

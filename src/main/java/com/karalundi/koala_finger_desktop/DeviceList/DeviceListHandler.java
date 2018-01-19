@@ -1,3 +1,6 @@
+/*
+ * Propiedad Intelectual de Karalundi. Todos los Derechos Reservados
+ */
 package com.karalundi.koala_finger_desktop.DeviceList;
 import com.karalundi.koala_finger_desktop.devices.Device;
 import java.util.ArrayList;
